@@ -16,7 +16,6 @@ import lombok.Setter;
 @Table(name = "tb_game_list")
 @Getter
 @Setter
-@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class GameList {
 	@Id
@@ -24,4 +23,12 @@ public class GameList {
 	@EqualsAndHashCode.Include
 	private Long id;
 	private String name;
+	
+	public GameList() {
+	}
+
+	public GameList(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 }
